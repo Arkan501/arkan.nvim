@@ -1,5 +1,5 @@
 require("arkan.remap")
-require("arkan.set")
+require("arkan.options")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -17,11 +17,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 
-local config = require("nvim-treesitter.configs")
-config.setup({
-    ensure_installed = { "lua", "javascript", "typescript" },
-    highlight = { enable = true },
-    indent = { enable = true }
-})
 
 
