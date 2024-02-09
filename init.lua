@@ -14,13 +14,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {}
-
 require("lazy").setup("plugins")
 
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
-vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
 
 local config = require("nvim-treesitter.configs")
 config.setup({
