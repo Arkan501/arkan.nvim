@@ -4,8 +4,8 @@ return {
     priority = 1000,
     config = function()
         require("tokyonight").setup({
-            transparent = true,
             style = "moon",
+            transparent = true,
             terminal_colors = true
         })
         vim.cmd.colorscheme "tokyonight"
