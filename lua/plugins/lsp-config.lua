@@ -11,6 +11,8 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
+                -- Ensure these servers are installed
+                -- Don't forget to add them in nvim-lspconfig
                 ensure_installed = { "lua_ls", "csharp_ls", "jdtls" },
             })
         end,
