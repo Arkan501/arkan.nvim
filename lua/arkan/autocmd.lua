@@ -1,3 +1,4 @@
+-- set neo-tree background transparent
 vim.api.nvim_create_augroup("Neo-tree_bg", { clear = true })
 vim.api.nvim_create_autocmd("ColorScheme", {group = "Neo-tree_bg", pattern = "*",
     callback = function()

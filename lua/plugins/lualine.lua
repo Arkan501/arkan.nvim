@@ -5,7 +5,11 @@ return {
             options = {
                 icons_enabled = true,
                 theme = "nightfly"
-            }
+            },
+            sections = {
+                lualine_c = { { require("dr-lsp").lspCount },
+                    { require("dr-lsp").lspProgress } },
+            },
         }
     end
 }
