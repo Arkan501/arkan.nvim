@@ -13,7 +13,8 @@ return {
             require("mason-lspconfig").setup({
                 -- Ensure these servers are installed
                 -- Don't forget to add them in nvim-lspconfig
-                ensure_installed = { "lua_ls", "csharp_ls", "jdtls" },
+                ensure_installed = { "lua_ls", "csharp_ls", "jdtls",
+                    "rust_analyzer" },
             })
         end,
     },
@@ -22,8 +23,8 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
             local lspconfig = require("lspconfig")
+
             lspconfig.lua_ls.setup({                -- Lua
                 capabilities = capabilities,
             })
@@ -33,8 +34,11 @@ return {
             lspconfig.jdtls.setup({                 -- Java
                 capabilities = capabilities,
             })
+            lspconfig.rust_analyzer.setup({         -- Rust
+                capabilities = capabilities,
+            })
             vim.keymap.set("n", "<A-CR>", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
         end,
     },
