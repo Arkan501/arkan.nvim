@@ -20,6 +20,7 @@ return {
     },
     -- lspconfig plugin
     -- used to set up the language servers
+    -- REMINDER: Don't forget to update treesitter
     {
         "neovim/nvim-lspconfig",
         config = function()
