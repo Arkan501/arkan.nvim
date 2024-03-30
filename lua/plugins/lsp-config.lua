@@ -13,8 +13,8 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 -- ensure these servers are installed
-                ensure_installed = { "lua_ls", "csharp_ls", "jdtls",
-                    "rust_analyzer" },
+                ensure_installed = { "lua_ls", "csharp_ls", "gopls",
+                    "jdtls", "rust_analyzer" },
             })
         end,
     },
@@ -32,8 +32,15 @@ return {
             lspconfig.csharp_ls.setup({         -- C#
                 capabilities = capabilities,
             })
-            lspconfig.jdtls.setup({             -- java
+            lspconfig.gopls.setup({     -- Go
+                cmd = { "gopls" },
                 capabilities = capabilities,
+                root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
+            })
+            lspconfig.jdtls.setup({             -- java
+                cmd = { "jdtls" },
+                capabilities = capabilities,
+                root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build", ".git"),
             })
             lspconfig.rust_analyzer.setup({     -- Rust
                 capabilities = capabilities,
