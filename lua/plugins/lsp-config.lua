@@ -33,7 +33,7 @@ return {
             lspconfig.csharp_ls.setup({         -- C#
                 capabilities = capabilities,
             })
-            lspconfig.gopls.setup({     -- Go
+            lspconfig.gopls.setup({             -- Go
                 cmd = { "gopls" },
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
