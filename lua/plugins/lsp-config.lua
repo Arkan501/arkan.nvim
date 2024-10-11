@@ -16,7 +16,6 @@ return {
                 ensure_installed = {
                     -- "csharp_ls",
                     "gopls",
-                    "delve",            -- delve needs to be here
                     -- "jdtls",
                     "lua_ls",
                     "pylsp",

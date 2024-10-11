@@ -11,6 +11,15 @@ return {
             vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { noremap = true })
         end,
     },
+    -- {
+    --     "jay-babu/mason-nvim-dap.nvim",
+    --     config = function()
+    --         require("mason-nvim-dap").setup({
+    --             ensure_installed = { "delve" },
+    --         })
+    --     end,
+
+    -- },
     -- dap-ui
     {
         "rcarriga/nvim-dap-ui",
