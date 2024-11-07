@@ -16,7 +16,6 @@ return {
                 ensure_installed = {
                     -- "csharp_ls",
                     "gopls",
-                    -- "jdtls",
                     "lua_ls",
                     "pylsp",
                     "rust_analyzer",
@@ -41,11 +40,6 @@ return {
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
             })
-            -- lspconfig.jdtls.setup({ -- java
-            -- 	cmd = { "jdtls" },
-            -- 	capabilities = capabilities,
-            -- 	root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build", ".git"),
-            -- })
             lspconfig.lua_ls.setup({ -- Lua
                 capabilities = capabilities,
             })
