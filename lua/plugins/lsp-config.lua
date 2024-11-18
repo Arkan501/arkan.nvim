@@ -14,7 +14,8 @@ return {
             require("mason-lspconfig").setup({
                 -- ensure these servers are installed
                 ensure_installed = {
-                    -- "csharp_ls",
+                    -- "csharp_ls",     -- not sure if I want to remove yet
+                    "clangd",
                     "gopls",
                     "lua_ls",
                     "pylsp",
@@ -35,18 +36,21 @@ return {
             -- lspconfig.csharp_ls.setup({ -- C#
             -- 	capabilities = capabilities,
             -- })
-            lspconfig.gopls.setup({ -- Go
+            lspconfig.clangd.setup({            -- C/C++
+                capabilities = capabilities,
+            })
+            lspconfig.gopls.setup({             -- Go
                 cmd = { "gopls" },
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
             })
-            lspconfig.lua_ls.setup({ -- Lua
+            lspconfig.lua_ls.setup({            -- Lua
                 capabilities = capabilities,
             })
-            lspconfig.pylsp.setup({ -- Python
+            lspconfig.pylsp.setup({             -- Python
                 capabilities = capabilities,
             })
-            lspconfig.rust_analyzer.setup({ -- Rust
+            lspconfig.rust_analyzer.setup({     -- Rust
                 capabilities = capabilities,
             })
             vim.keymap.set("n", "<A-CR>", vim.lsp.buf.hover, {})
