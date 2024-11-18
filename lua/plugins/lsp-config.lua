@@ -54,4 +54,7 @@ return {
             vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
         end,
     },
+    {
+        "chrisgrieser/nvim-dr-lsp"
+    },
 }
