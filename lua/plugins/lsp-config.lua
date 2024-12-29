@@ -7,7 +7,19 @@ return {
             require("mason").setup()
         end,
     },
-    -- mason-lspcongif plugin
+    -- mason-tool-installer plugin
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        config = function()
+            require("mason-tool-installer").setup({
+                ensure_installed = {
+                    "goimports",
+                    "stylua",
+                }
+            })
+            end
+    },
+    -- mason-lspconfig plugin
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
@@ -42,7 +54,7 @@ return {
             lspconfig.gopls.setup({             -- Go
                 cmd = { "gopls" },
                 capabilities = capabilities,
-                root_dir = lspconfig.util.root_pattern("go.mod", ".git"),
+                root_dir = lspconfig.util.root_pattern("go.mod"),
             })
             lspconfig.lua_ls.setup({            -- Lua
                 capabilities = capabilities,
