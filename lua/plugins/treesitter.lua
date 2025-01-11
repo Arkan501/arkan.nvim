@@ -11,6 +11,7 @@ return {
                 "lua",
                 "python",
                 "rust",
+                "zig",
             },
 			highlight = { enable = true },
 			indent = { enable = true },
