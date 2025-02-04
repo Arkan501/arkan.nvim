@@ -13,6 +13,7 @@ return {
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
+                    "clang-format",
 					"goimports",
 					"stylua",
 				},
@@ -50,6 +51,10 @@ return {
 			-- 	capabilities = capabilities,
 			-- })
 			lspconfig.clangd.setup({ -- C/C++
+                cmd = {
+                    "clangd",
+                    "--fallback-style=webkit",
+                },
 				capabilities = { offsetEncoding = "utf-16" }, -- fix the multiple offset warning
 			})
 			lspconfig.gopls.setup({ -- Go

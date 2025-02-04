@@ -32,3 +32,5 @@ vim.opt.colorcolumn = "80"
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.zig_fmt_autosave = 0
