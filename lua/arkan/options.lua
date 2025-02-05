@@ -21,7 +21,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
 --vim.opt.isfname:append("@-@")
 
@@ -32,5 +32,7 @@ vim.opt.colorcolumn = "80"
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- disable native virtual text for lsp_lines
 
 vim.g.zig_fmt_autosave = 0
