@@ -28,10 +28,11 @@ return {
 				-- ensure these servers are installed
 				ensure_installed = {
 					-- "csharp_ls",     -- not sure if I want to remove yet
+                    "basedpyright",
 					"clangd",
 					"gopls",
 					"lua_ls",
-					"pylsp",
+					-- "pylsp",
 					"rust_analyzer",
 					"zls",
 				},
@@ -64,7 +65,7 @@ return {
 			lspconfig.lua_ls.setup({ -- Lua
 				capabilities = capabilities,
 			})
-			lspconfig.pylsp.setup({ -- Python
+			lspconfig.basedpyright.setup({ -- Python
 				capabilities = capabilities,
 			})
 			lspconfig.rust_analyzer.setup({ -- Rust
