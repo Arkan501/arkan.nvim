@@ -33,6 +33,5 @@ vim.opt.colorcolumn = "80"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- disable native virtual text for lsp_lines
-
+-- stop zig from autoformatting on save
 vim.g.zig_fmt_autosave = 0
